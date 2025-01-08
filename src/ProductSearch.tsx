@@ -12,11 +12,9 @@ const ProductSearch: React.FC = () => {
     fetch('/products.json')
       .then((res) => res.json())
       .then((data) => {
-        console.log('Fetched data:', data);
         if (data.products && Array.isArray(data.products)) {
           setProducts(data.products);
         } else {
-          console.error('Unexpected data format:', data);
           setProducts([]);
         }
       })
